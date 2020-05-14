@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-
+import groovy.json.JsonSlurper 
 /**
  * Checks the license of a GitHub repository.
  *
