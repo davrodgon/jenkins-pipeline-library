@@ -7,10 +7,11 @@
  * @param repository [mandatory]
  */
 def call(String owner, String repository) {
+    def utils = new eu.indigo.sqa.Utils()
     String GITHUB_API = 'https://api.github.com/repos'
     String url = "${GITHUB_API}/${owner}/${repository}/license"
     println "Querying ${url}"
-    def json = Utils.urlStringToJson(url)
+    def json = utils.urlStringToJson(url)
     def bodyText = json.body
     return bodyText
 }
