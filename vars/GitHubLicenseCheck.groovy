@@ -8,7 +8,7 @@ import groovy.json.JsonSlurper
  */
 def call(String owner, String repository) {
     String GITHUB_API = 'https://api.github.com/repos/'
-    String url = "${GITHUB_API}/${owner}/${repo}/license"
+    String url = "${GITHUB_API}/${owner}/${repository}/license"
     println "Querying ${url}"
     def text = url.toURL().getText()
     def json = new JsonSlurper().parseText(text)
