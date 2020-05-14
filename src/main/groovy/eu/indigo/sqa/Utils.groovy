@@ -1,8 +1,7 @@
 #!/usr/bin/groovy
-package es.ifca.sqa
+package eu.indigo.sqa
 
 import com.cloudbees.groovy.cps.NonCPS
-
 
 /**
  * Returns an array of strings relying on newline character.
@@ -13,7 +12,6 @@ import com.cloudbees.groovy.cps.NonCPS
 def multilineToArray(String multiline_str) {
     return multiline_str.split('\n').toList()
 }
-
 
 
 

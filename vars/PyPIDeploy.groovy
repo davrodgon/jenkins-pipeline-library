@@ -1,6 +1,7 @@
 #!/usr/bin/groovy
 
 import java.nio.file.Paths
+import hudson.util.Secret
 
 /**
  * Gets credential object from Jenkins identifier.
