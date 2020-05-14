@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 package eu.indigo.sqa
-
+import groovy.json.JsonSlurper 
 import com.cloudbees.groovy.cps.NonCPS
 
 /**
@@ -13,7 +13,12 @@ def multilineToArray(String multiline_str) {
     return multiline_str.split('\n').toList()
 }
 
-
+@NonCPS
+def urlStringToJson(String url) {
+    def text = url.toURL().getText()
+    def json = new JsonSlurper().parseText(text)
+    return json;
+}
 
 return this
 

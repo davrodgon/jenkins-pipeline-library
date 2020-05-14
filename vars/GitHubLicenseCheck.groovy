@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-import groovy.json.JsonSlurper 
+
 /**
  * Checks the license of a GitHub repository.
  *
@@ -7,12 +7,10 @@ import groovy.json.JsonSlurper
  * @param repository [mandatory]
  */
 def call(String owner, String repository) {
-
-    String GITHUB_API = 'https://api.github.com/repos/'
+    String GITHUB_API = 'https://api.github.com/repos'
     String url = "${GITHUB_API}/${owner}/${repository}/license"
     println "Querying ${url}"
-    def text = url.toURL().getText()
-    def json = new JsonSlurper().parseText(text)
+    def json = Utils.urlStringToJson(url)
     def bodyText = json.body
     return bodyText
 }
