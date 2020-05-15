@@ -12,6 +12,7 @@ def call(String owner, String repository) {
     println "Querying ${url}"
     def text = url.toURL().getText()
     def json = new JsonSlurper().parseText(text)
+    println "JSON ${json}"
     def bodyText = json.body
     println "License JSON body ${bodyText}"
     return bodyText
