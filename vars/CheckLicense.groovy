@@ -14,10 +14,13 @@ class License {
 }
 
 License getLicenseData(String licenseId) {
-    def jsonSlurper = new JsonSlurper()
-    def data = jsonSlurper.parseText(new File("licenses.json").text)
-    myLicense = data.licenses.findAll { it.licenseId == licenseId } as License
-    return myLicense
+    try { 
+       def jsonSlurper = new JsonSlurper()
+       def data = jsonSlurper.parseText(new File("licenses.json").text)
+       return  data.licenses.findAll { it.licenseId == licenseId } as License
+    } catch(FileNotFoundException e) {
+      println "Licenses reference list not found!"
+   }
 }
 
 /**
