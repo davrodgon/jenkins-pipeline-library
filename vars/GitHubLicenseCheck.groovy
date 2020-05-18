@@ -10,10 +10,8 @@ def call(String owner, String repository) {
     String GITHUB_API = 'https://api.github.com/repos'
     String url = "${GITHUB_API}/${owner}/${repository}/license"
     println "Querying ${url}"
-    def text = url.toURL().getText()
-    def json = new JsonSlurper().parseText(text)
+    def jsonText = url.toURL().getText()
+    def json = new JsonSlurper().parseText(jsonText)
     println "JSON ${json}"
-    def bodyText = json.body
-    println "License JSON body ${bodyText}"
-    return bodyText
+    
 }
