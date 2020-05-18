@@ -13,15 +13,16 @@ class License {
     Boolean isFsfLibre
 }
 
+
 License getLicenseData(String licenseId) {
-    try { 
-       def jsonSlurper = new JsonSlurper()
-       def data = jsonSlurper.parseText(new File("licenses.json").text)
-       return  data.licenses.findAll { it.licenseId == licenseId } as License
-    } catch(FileNotFoundException e) {
-      println "Licenses reference list not found!"
-   }
+    def jsonSlurper = new JsonSlurper()
+    String url = "https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json"
+    def jsonText = url.toURL().getText()
+    def data = new JsonSlurper().parseText(jsonText)
+    myLicense = data.licenses.findAll { it.licenseId == licenseId } as License
+    return myLicense
 }
+
 
 /**
  * Checks the license of a GitHub repository.
