@@ -1,4 +1,5 @@
 #!/usr/bin/groovy
+package eu.indigo.sqa
 import groovy.json.JsonSlurper 
 
 class License {
