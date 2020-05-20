@@ -20,7 +20,7 @@ package eu.indigo.sqa
  *
  * @author David Rodriguez
  */
-class GitHubUtils {
- static String GITHUB_API = 'https://api.github.com/repos'
+class GitHub {
+ static String repository_url = 'https://api.github.com/repos'
 }
 

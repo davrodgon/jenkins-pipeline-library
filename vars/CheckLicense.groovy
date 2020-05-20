@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-import eu.indigo.sqa.License
+import eu.indigo.sqa.*
 
 import groovy.json.JsonSlurper 
 
@@ -19,7 +19,7 @@ License retrieveFromSpdx(java.lang.String licenseId) {
  */
 def call(String owner, String repository) {
     String GITHUB_API = 'https://api.github.com/repos'
-    String url = "${GITHUB_API}/${owner}/${repository}/license"
+    String url = "${GitHub.repository_url}/${owner}/${repository}/license"
     try {
         def jsonText = url.toURL().getText()
         def json = new JsonSlurper().parseText(jsonText)
