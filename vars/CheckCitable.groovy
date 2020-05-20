@@ -9,6 +9,7 @@
  */
 def call(String owner, String repository) {
     
-    boolean citation = eu.indigo.sqa.GitHub.isPathInRepository(owner,repository,"CITATION.json")
+    def gh = new eu.indigo.sqa.GitHub()
+    boolean citation = gh.isPathInRepository(owner,repository,"CITATION.json")
    
 }
