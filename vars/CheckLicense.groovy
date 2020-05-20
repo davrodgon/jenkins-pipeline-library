@@ -1,5 +1,6 @@
 #!/usr/bin/groovy
 import eu.indigo.sqa.*
+import groovy.json.JsonSlurper 
 
 /**
  * Checks the license of a GitHub repository.
