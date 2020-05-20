@@ -16,6 +16,7 @@
 
 package eu.indigo.sqa
 
+import static java.net.HttpURLConnection.*
 
 class GitHub {
     
