@@ -14,7 +14,7 @@ class License {
     Boolean isOsiApproved
     Boolean isFsfLibre
 
-    License retrieveFromSpdx(String licenseId) {
+    License retrieveFromSpdx(java.lang.String licenseId) {
         String url = "https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json"
         def jsonText = url.toURL().getText()
         def data = new JsonSlurper().parseText(jsonText)
