@@ -28,13 +28,13 @@ class GitHub {
         connection.setRequestMethod("GET")
         // connection.setConnectTimeout(10000)
         connection.connect()
-        code = connection.getResponseCode()
+        def responseCode = connection.getResponseCode()
         //        def code = new URL(url).openConnection().with {
         //            requestMethod = 'GET'
         //            connect()
         //            responseCode
         //        }
-        return code == 200
+        return responseCode == 200
     }
 
 }
