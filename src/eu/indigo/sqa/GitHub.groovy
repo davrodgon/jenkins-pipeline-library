@@ -23,7 +23,7 @@ class GitHub {
     def boolean isPathInRepository(String owner,String repository,String path)
     {
         String repository_url = 'https://api.github.com/repos'
-        String url = "${repository_url}/${owner}/${repository}/contents/${path}"
+        URL url = "${repository_url}/${owner}/${repository}/contents/${path}".toURL()
         def connection = (HttpURLConnection)url.openConnection()
         connection.setRequestMethod("GET")
         // connection.setConnectTimeout(10000)
