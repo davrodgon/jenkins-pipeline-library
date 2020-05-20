@@ -16,8 +16,6 @@
 
 package eu.indigo.sqa
 
-import static java.net.HttpURLConnection.*
-
 class GitHub {
     
     static String repository_url = 'https://api.github.com/repos'
@@ -26,11 +24,14 @@ class GitHub {
     {
         String repository_url = 'https://api.github.com/repos'
         String url = "${repository_url}/${owner}/${repository}/contents/${path}"
-        def code = new URL(url).openConnection().with {
-            requestMethod = 'GET'
-            connect()
-            responseCode
-        }
+        def connection = (HttpURLConnection)url.openConnection()
+        connection.setRequestMethod("GET")
+        code = connection.getResponseCode()
+        //        def code = new URL(url).openConnection().with {
+        //            requestMethod = 'GET'
+        //            connect()
+        //            responseCode
+        //        }
         return code == 200
     }
 
