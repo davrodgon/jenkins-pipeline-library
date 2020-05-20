@@ -19,7 +19,7 @@ package eu.indigo.sqa
 
 class GitHub {
     
-    String repository_url = 'https://api.github.com/repos'
+    static String repository_url = 'https://api.github.com/repos'
     
     def boolean isPathInRepository(String owner,String repository,String path)
     {
