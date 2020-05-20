@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-import eu.indigo.sqa.*
+
 
 /**
  * Checks the license of a GitHub repository.
@@ -9,6 +9,6 @@ import eu.indigo.sqa.*
  */
 def call(String owner, String repository) {
     
-    boolean citation = GitHub.isPathInRepository(owner,repository,"CITATION,.json")
+    boolean citation = eu.indigo.sqa.GitHub.isPathInRepository(owner,repository,"CITATION.json")
    
 }

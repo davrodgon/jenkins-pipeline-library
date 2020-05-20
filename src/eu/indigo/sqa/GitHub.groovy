@@ -16,24 +16,21 @@
 
 package eu.indigo.sqa
 
-/**
- *
- * @author David Rodriguez
- */
-class GitHub {
-    static String repository_url = 'https://api.github.com/repos'
+String repository_url = 'https://api.github.com/repos'
  
     
     
-    def boolean isPathInRepository(String owner,String repository,String path)
-    {
-        String url = "${repository_url}/${owner}/${repository}/contents/${path}"
-        def code = new URL(url).openConnection().with {
-            requestMethod = 'GET'
-            connect()
-            responseCode
-        }
-        return code == 200
+def boolean isPathInRepository(String owner,String repository,String path)
+{
+    String url = "${repository_url}/${owner}/${repository}/contents/${path}"
+    def code = new URL(url).openConnection().with {
+        requestMethod = 'GET'
+        connect()
+        responseCode
     }
+    return code == 200
 }
+
+
+return this
 
