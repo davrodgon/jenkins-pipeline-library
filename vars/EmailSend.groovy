@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 
 /**
- * Sends e-mails using Jenkin´s email extension.
+ * Sends e-mails using Jenkins email extension.
  *
  * @param  subject e-mail's subject [mandatory]
  * @param  body e-mail's body [mandatory]

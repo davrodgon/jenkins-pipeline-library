@@ -54,13 +54,13 @@ the specific language governing permissions and limitations under the License. -
                 <configuration>
                     <sources>
                         <source>
-                            <directory>${project.basedir}/src/main/groovy</directory>
+                            <directory>${project.basedir}/src/</directory>
                             <includes>
                                 <include>**/*.groovy</include>
                             </includes>
                         </source>
                         <source>
-                            <directory>${project.basedir}/vars</directory>
+				<directory>${project.basedir}/vars/</directory>
                             <includes>
                                 <include>**/*.groovy</include>
                             </includes>
