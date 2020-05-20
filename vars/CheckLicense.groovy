@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-import eu.indigo.sqa.*
+
 import groovy.json.JsonSlurper 
 
 /**
@@ -12,12 +12,11 @@ def call(String owner, String repository) {
     String GITHUB_API = 'https://api.github.com/repos'
     String url = "${GITHUB_API}/${owner}/${repository}/license"
     try {
-       def jsonText = url.toURL().getText()
-       def json = new JsonSlurper().parseText(jsonText)
-       def spdx_id = json.license.spdx_id
-       def license = License.getLicenseData(spdx_id)
-       println "Is OSI approved ${license.isOsiApproved}"
+        def jsonText = url.toURL().getText()
+        def json = new JsonSlurper().parseText(jsonText)
+        def license = License.retrieveFromSpdx(json.license.spdx_id)
+        println "License ${license.name}. Is OSI approved ${license.isOsiApproved}"
     } catch(FileNotFoundException e) {
-      println "License not found!"
-   }
+        println "License not found!"
+    }
 }
