@@ -1,4 +1,5 @@
 #!/usr/bin/groovy
+import eu.indigo.sqa.License
 
 import groovy.json.JsonSlurper 
 
