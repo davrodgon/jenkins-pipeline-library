@@ -18,8 +18,7 @@ License retrieveFromSpdx(java.lang.String licenseId) {
  * @param repository [mandatory]
  */
 def call(String owner, String repository) {
-    String repository_url = 'https://api.github.com/repos'
-    String url = "${repository_url}/${owner}/${repository}/license"
+    String url = "${GitHub.repository_url}/${owner}/${repository}/license"
     try {
         def jsonText = url.toURL().getText()
         def json = new JsonSlurper().parseText(jsonText)
