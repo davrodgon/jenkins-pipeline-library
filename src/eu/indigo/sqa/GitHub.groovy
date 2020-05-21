@@ -26,14 +26,8 @@ class GitHub {
         URL url = "${repository_url}/${owner}/${repository}/contents/${path}".toURL()
         def connection = (HttpURLConnection)url.openConnection()
         connection.setRequestMethod("GET")
-        // connection.setConnectTimeout(10000)
         connection.connect()
         def responseCode = connection.getResponseCode()
-        //        def code = new URL(url).openConnection().with {
-        //            requestMethod = 'GET'
-        //            connect()
-        //            responseCode
-        //        }
         return responseCode == 200
     }
 
