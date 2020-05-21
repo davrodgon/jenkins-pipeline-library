@@ -27,8 +27,7 @@ class GitHub {
         def connection = (HttpURLConnection)url.openConnection()
         connection.setRequestMethod("GET")
         connection.connect()
-        def responseCode = connection.getResponseCode()
-        return responseCode == 200
+        return connection.getResponseCode() == 200
     }
 
 }
