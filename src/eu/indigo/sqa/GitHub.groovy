@@ -16,13 +16,16 @@
 
 package eu.indigo.sqa
 
+/** 
+*  Utility class for facilitating access to the GitHub REST API.
+*
+**/
 class GitHub {
     
     static String repository_url = 'https://api.github.com/repos'
     
     def boolean isPathInRepository(String owner,String repository,String path)
     {
-        String repository_url = 'https://api.github.com/repos'
         URL url = "${repository_url}/${owner}/${repository}/contents/${path}".toURL()
         def connection = (HttpURLConnection)url.openConnection()
         connection.setRequestMethod("GET")
