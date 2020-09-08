@@ -42,7 +42,7 @@ def call(
 }
 
 def validate(String configFile) {
-    def validatorDockerImage = 'davrodgon/jpl-validator:new-categories'
+    def validatorDockerImage = 'davrodgon/jpl-validator'
     def cmd = 'docker pull ' + "$validatorDockerImage &&" +
               'docker run --rm -v "$PWD:/sqa" ' + "$validatorDockerImage /sqa/${configFile}"
     return sh(returnStatus: true, script: cmd)
