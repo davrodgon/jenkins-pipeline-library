@@ -1,5 +1,5 @@
 FROM indigodatacloud/ci-images:java
-MAINTAINER Pablo Orviz <orviz@ifca.unican.es>
+LABEL maintainer="Pablo Orviz <orviz@ifca.unican.es>"
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN apt-get update \
